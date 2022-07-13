@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Vintage Belt - Red",
+    "img": "../src/assets/img/belt_red_vintage.jpg",
+    "type": "belt",
+    "color": [
+      "red",
+      "black"
+    ],
+    "price": "110",
+    "available": "2",
+    "description": "Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm",
+    "productionTime": "2"
+  },
+  {
+    "name": "Vintage Belt - Red",
+    "img": "../src/assets/img/belt_red_vintage.jpg",
+    "type": "belt",
+    "color": [
+      "red",
+      "black"
+    ],
+    "price": "110",
+    "available": "2",
+    "description": "Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm",
+    "productionTime": "2"
+  },
+  {
+    "name": "Vintage Belt - Red",
+    "img": "../src/assets/img/belt_red_vintage.jpg",
+    "type": "belt",
+    "color": [
+      "red",
+      "black"
+    ],
+    "price": "110",
+    "available": "2",
+    "description": "Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm",
+    "productionTime": "2"
+  },
+  {
+    "name": "Vintage Belt - Red",
+    "img": "../src/assets/img/belt_red_vintage.jpg",
+    "type": "belt",
+    "color": [
+      "red",
+      "black"
+    ],
+    "price": "110",
+    "available": "2",
+    "description": "Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm",
+    "productionTime": "2"
+  },
+  {
+    "name": "Vintage Belt - Red",
+    "img": "../src/assets/img/belt_red_vintage.jpg",
+    "type": "belt",
+    "color": [
+      "red",
+      "black"
+    ],
+    "price": "110",
+    "available": "2",
+    "description": "Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm",
+    "productionTime": "2"
+  },
+  {
+    "name": "Vintage Belt - Red",
+    "img": "../src/assets/img/belt_red_vintage.jpg",
+    "type": "belt",
+    "color": [
+      "red",
+      "black"
+    ],
+    "price": "110",
+    "available": "2",
+    "description": "Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm",
+    "productionTime": "2"
+  }
+]

@@ -19,7 +19,7 @@
     text: 'Сумки',
   },
 ];*/
-import { DataCard } from '../interfaces/interfaces';
+/*import { DataCard } from '../interfaces/interfaces';
 import { basicCatalog } from './basicCatalog';
 import { data } from '../modules/data';
 
@@ -38,4 +38,4 @@ filter(){
 
   if 
 }
-}
+}*/

@@ -65,7 +65,7 @@ module.exports = ({ development }) => ({
     new CopyPlugin({
       patterns: [
         {
-          from: './src/assets/public',
+          from: './src/assets',
           to: './assets', // копирует ассеты из папки public в заданную папку ./assets/img в папке dist
           noErrorOnMissing: true,
         },

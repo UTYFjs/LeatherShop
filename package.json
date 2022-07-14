@@ -4,6 +4,7 @@
   "description": "My leather Shop",
   "main": "index.js",
   "scripts": {
+    "start": "webpack serve --open --config ./webpack.config.js --env mode=dev",
     "build": "webpack",
     "dev": "webpack serve --env development",
     "lint": "eslint src"

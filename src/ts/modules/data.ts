@@ -3,7 +3,7 @@ import { IDataCard } from "../interfaces/interfaces";
 export const data: Array<IDataCard> = [
   {
     name: 'Vintage Belt - Red',
-    img: './assets/belt_red_vintage.jpg',
+    img: './assets/img/belt_red_vintage.jpg',
     type: 'belt',
     color: ['red', 'black'],
     price: '110',
@@ -17,7 +17,7 @@ export const data: Array<IDataCard> = [
   },
   {
     name: 'Vintage Belt - Red',
-    img: './assets/belt_red_vintage.jpg',
+    img: './assets/img/belt_red_vintage.jpg',
     type: 'wallet',
     color: ['red', 'black'],
     price: '110',
@@ -28,7 +28,7 @@ export const data: Array<IDataCard> = [
   },
   {
     name: 'Vintage Belt - Red',
-    img: './assets/belt_red_vintage.jpg',
+    img: './assets/img/belt_red_vintage.jpg',
     type: 'bag',
     color: ['red', 'black'],
     price: '110',
@@ -39,7 +39,7 @@ export const data: Array<IDataCard> = [
   },
   {
     name: 'Vintage Belt - Red',
-    img: './assets/belt_red_vintage.jpg',
+    img: './assets/img/belt_red_vintage.jpg',
     type: 'belt',
     color: ['red', 'black'],
     price: '110',
@@ -50,7 +50,7 @@ export const data: Array<IDataCard> = [
   },
   {
     name: 'Vintage Belt - Red',
-    img: './assets/belt_red_vintage.jpg',
+    img: './assets/img/belt_red_vintage.jpg',
     type: 'belt',
     color: ['red', 'black'],
     price: '110',
@@ -61,8 +61,8 @@ export const data: Array<IDataCard> = [
   },
   {
     name: 'Vintage Belt - Red',
-    img: './assets/belt_red_vintage.jpg',
-    type: 'for-document',
+    img: './assets/img/belt_red_vintage.jpg',
+    type: 'forDocuments',
     color: ['red', 'black'],
     price: '110',
     available: '0',

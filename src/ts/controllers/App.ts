@@ -20,25 +20,20 @@ export class App {
   }
 
   listener() {
-
-    const input = document.querySelectorAll('input');
+    const input: NodeListOf<HTMLInputElement> =
+      document.querySelectorAll('input');
     input.forEach((item) => {
       item.addEventListener('click', () => { ///должна быть функция фильтр 
-        /*if (item.checked) {
-          //const name: string = item.id;
-          //this.model.productTypes[name];
-          //console.log(this.model.productTypes);
-          //console.log(item.id);
-          const type = item.id;
-          this.model.filterType(type);
-        }*/
+        console.log( 'listener work')
         this.model.newFilter();
         this.view.main.getCatalog(this.model.dataCards);
-        //this.start();
-        //this.view.init(this.model.dataCards);
-        //console.log(item.checked);
       });
-      //console.log(item.checked)
     });
+
+    const search: HTMLElement | null = document.getElementById('search');
+    search?.addEventListener('input', () => {
+      this.model.search(search as HTMLInputElement);
+      this.view.main.getCatalog(this.model.dataCards);
+    })
   }
 }

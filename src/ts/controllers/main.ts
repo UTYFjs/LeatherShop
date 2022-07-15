@@ -97,17 +97,17 @@ export class Main {
   ): HTMLElement {
     const wrapper: HTMLElement = this.div();
     wrapper.classList.add(id);
-    const input: HTMLElement = document.createElement('input');
+    const input: HTMLInputElement = document.createElement('input');
     input.setAttribute('type', 'checkbox');
     input.setAttribute('id', id);
     input.classList.add(classCheckbox);
-    const label: HTMLElement = document.createElement('label');
+    const label: HTMLLabelElement = document.createElement('label');
     label.textContent = text;
     label.setAttribute('for', id);
     wrapper.append(input);
     wrapper.append(label);
 
-    parent?.append(wrapper);
+    parent.append(wrapper);
     return wrapper;
   }
 
@@ -160,25 +160,19 @@ export class Main {
 
     const searchField: HTMLElement = this.div();
     searchField.classList.add('search-field');
-    searchField.textContent = 'Поиск';
+    
 
-    const search: HTMLElement = document.createElement('input');
-    search.setAttribute('type', 'search');
+    const search: HTMLInputElement = document.createElement('input');
+    search.setAttribute('type', 'text');
+    search.setAttribute('id', 'search');
+    const label: HTMLLabelElement = document.createElement('label');
+    label.textContent = 'Поиск';
+    label.setAttribute('for', 'search');
+    searchField.append(label);
     searchField.append(search);
 
     const filterField: HTMLElement = this.div();
     filterField.classList.add('filter-field');
-
-    const product: HTMLElement = this.div();
-    product.classList.add('product');
-    product.textContent = 'Изделия';
-
-    this.createButton('wallet', 'Кошельки', product);
-    this.createButton('cardholder', 'Картхолдеры', product);
-    this.createButton('for-documents', 'Для документов', product);
-    this.createButton('belt', 'Ремни', product);
-    this.createButton('notebook', 'Блокноты', product);
-    this.createButton('bag', 'Сумки', product);
 
     const productCheckbox: HTMLElement = this.div();
     productCheckbox.classList.add('product');
@@ -208,38 +202,49 @@ export class Main {
     const manufacturer: HTMLElement = this.div();
     manufacturer.classList.add('manufacturer');
     manufacturer.textContent = 'Производитель';
-    this.createButton('ap-paco', 'Al Paco', manufacturer);
-    this.createButton('other', 'Другие', manufacturer);
-
-    const available: HTMLElement = this.div();
-    available.classList.add('available');
-    available.textContent = 'Наличие';
-    this.createButton('available', 'В наличии', available);
-    this.createButton('on-order', 'Под заказ', available);
-    this.createButton('unavailable', 'Временно не доступно', available);
-
+    this.createCheckbox('alPaco', 'Al Paco', manufacturer, 'product-manufacturer');
+    this.createCheckbox(
+      'other',
+      'Другие',
+      manufacturer,
+      'product-manufacturer'
+    );
     const color: HTMLElement = this.div();
-    color.classList.add('manufacturer');
+    color.classList.add('color');
     color.textContent = 'Цвет';
-    this.createButton('black', '', color);
-    this.createButton('brown', '', color);
-    this.createButton('redhead', '', color);
-    this.createButton('other', '', color);
+    this.createCheckbox('red', 'Kрасный', color, 'product-color');
+    this.createCheckbox('black', 'Черный', color, 'product-color');
+    this.createCheckbox('brown', 'Коричневый', color, 'product-color');
+    this.createCheckbox('gold', 'Золотой', color, 'product-color');
+    this.createCheckbox('redhead', 'Рыжий', color, 'product-color');
 
-    const freeShipping: HTMLElement = this.createCheckbox(
-      'free-shipping',
+
+    const shipping: HTMLElement = this.div();
+    shipping.classList.add('shipping');
+    shipping.textContent = 'Доставка';
+    this.createCheckbox(
+      'freeShipping',
       'Free Shipping',
-      filterField,
+      shipping,
       'free-shipping'
     );
 
-    filterField.append(product);
+    const bestseller: HTMLElement = this.div();
+    bestseller.classList.add('bestseller');
+    bestseller.textContent = 'Популярные товары';
+    this.createCheckbox(
+      'bestseller',
+      'Очень популярно',
+      bestseller,
+      'product-bestseller'
+    );
+ 
+        
     filterField.append(manufacturer);
-    filterField.append(color);
-    filterField.append(available);
-    //filterField.append(freeShipping);
-
     filterField.append(productCheckbox);
+    filterField.append(shipping);
+    filterField.append(bestseller);
+    filterField.append(color);
 
     sidebar.append(searchField);
     sidebar.append(filterField);

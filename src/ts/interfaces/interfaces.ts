@@ -2,11 +2,14 @@ export interface IDataCard {
   name: string;
   img: string;
   type: string;
-  color: Array<string>;
+  color: string;
   price: string;
-  available: string;
+  stock: string;
   description: string;
   productionTime: string;
+  bestseller: boolean;
+  freeShipping: boolean;
+  available?: string; 
   manufacturer?: string;
   amount?: number;
   year?: number;

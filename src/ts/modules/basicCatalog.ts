@@ -7,101 +7,221 @@ export class BasicCatalog {
   allCards: Array<IDataCard>;
   productTypes: IProductTypes;
   filter: boolean;
-  filterCards: Array<IDataCard> | null;
+  searchCards: Array<IDataCard> | null;
 
   constructor(data: Array<IDataCard>) {
     this.dataCards = data;
-    this.filterCards = null;
+    this.searchCards = data;
     this.allCards = data;
     this.productTypes = {belt: true, wallet: true, notebook: true, bag: true, cardholder: true, forDocuments: true,};
     this.filter = false;
   }
 
 
-  newFilter(){
-
-    const input: NodeListOf<HTMLInputElement> = document.querySelectorAll('.product-type');
-    const onlyProductType: Array<IDataCard> = [];
+  newFilter():void{
+    console.log('filter start');
+    const input: NodeListOf<HTMLInputElement> =
+      document.querySelectorAll('.product-type');
+    let onlyProductType: Array<IDataCard> = [];
     input.forEach((item) => {
-      if(item.checked){ 
+      if (item.checked) {
         this.allCards.forEach((card) => {
-          if (card.type == item.id){
+          if (card.type == item.id) {
             onlyProductType.push(card);
-          }});
-        //this.dataCards = this.allCards.filter((card) => card.type == item.id);
-        
-        
+          }
+        });
       }
-      
-      
-      //console.log (item);
-    }) 
-    this.dataCards = onlyProductType;
-    console.log(this.dataCards);
+    });
+    onlyProductType = onlyProductType.length ? onlyProductType : this.allCards;
 
-
-  }
-
-  filterType(category: string, checked: boolean/*, data: Array<IDataCard>*/) {
-    this.filter = true;
-    /*if(checked){
-      switch (category) {
-        case 'belt':
-          this.productTypes.belt = true;
-          break;
-        case 'wallet':
-          this.productTypes.wallet = true;
-          break;
-        case 'notebook':
-          this.productTypes.notebook = true;
-          break;
-        case 'bag':
-          this.productTypes.bag = true;
-          break;
-        case 'cardholder':
-          this.productTypes.cardholder = true;
-          break;
-        case 'forDocuments':
-          this.productTypes.forDocuments = true;
-          break;
-      }
-    } else {
-      switch (category) {
-        case 'belt':
-          this.productTypes.belt = false;
-          break;
-        case 'wallet':
-          this.productTypes.wallet = false;
-          break;
-        case 'notebook':
-          this.productTypes.notebook = false;
-          break;
-        case 'bag':
-          this.productTypes.bag = false;
-          break;
-        case 'cardholder':
-          this.productTypes.cardholder = false;
-          break;
-        case 'forDocuments':
-          this.productTypes.forDocuments = false;
-          break;
-      }
-    }
-    */
-    //const typeFilterArr: HTMLInputElement[] = document.querySelectorAll('filter-type')
-    
-    //console.log(`This: ${category}`);
-
-    this.dataCards = this.allCards.filter((item) => item.type == category);
-    
-    this.allCards.forEach((item) => {
-      if(item.type == category){
-        if(checked){
-          this.dataCards
+    const manufacturer: NodeListOf<HTMLInputElement> =
+      document.querySelectorAll('.product-manufacturer');
+    let onlyManufacturer: Array<IDataCard> = [];
+    manufacturer.forEach((item) => {
+      if (item.checked) {
+        if (onlyProductType) {
+          onlyProductType.forEach((card) => {
+            if (card.manufacturer == item.id) {
+              onlyManufacturer.push(card);
+            }
+          });
+        } else {
+          this.allCards.forEach((card) => {
+            if (card.manufacturer == item.id) {
+              onlyManufacturer.push(card);
+            }
+          });
         }
       }
-    })
-    //console.log(this.dataCards);
-    //console.log(this.allCards);
+    });
+    onlyManufacturer = onlyManufacturer.length
+      ? onlyManufacturer
+      : onlyProductType;
+
+    const freeShipping: NodeListOf<HTMLInputElement> =
+      document.querySelectorAll('#freeShipping');
+    let onlyFreeShipping: Array<IDataCard> = [];
+    freeShipping.forEach((item) => {
+      if (item.checked) {
+        if (onlyManufacturer) {
+          onlyManufacturer.forEach((card) => {
+            if (card.freeShipping) {
+              onlyFreeShipping.push(card);
+            }
+          });
+        } else {
+          this.allCards.forEach((card) => {
+            if (card.freeShipping) {
+              if (!onlyFreeShipping.includes(card)) {
+                onlyFreeShipping.push(card);
+              }
+            }
+          });
+        }
+      }
+    });
+    onlyFreeShipping = onlyFreeShipping.length
+      ? onlyFreeShipping
+      : onlyManufacturer;
+
+    const bestseller: NodeListOf<HTMLInputElement> =
+      document.querySelectorAll('#bestseller');
+    let onlyBestseller: Array<IDataCard> = [];
+    bestseller.forEach((item) => {
+      if (item.checked) {
+        if (onlyFreeShipping) {
+          onlyFreeShipping.forEach((card) => {
+            if (card.bestseller) {
+              onlyBestseller.push(card);
+            }
+          });
+        } else {
+          this.allCards.forEach((card) => {
+            if (card.bestseller) {
+              if (!onlyBestseller.includes(card)) {
+                onlyBestseller.push(card);
+              }
+            }
+          });
+        }
+      }
+    });
+    onlyBestseller = onlyBestseller.length ? onlyBestseller : onlyFreeShipping;
+
+    /// Доработать для работы с массивами чтобы не дублироваись карточки
+    /*const color: NodeListOf<HTMLInputElement> = document.querySelectorAll(
+      '.product-color'
+    );
+    let onlyColor: Array<IDataCard> = [];
+    console.log('color');
+    console.log(color);
+    color.forEach((item) => {
+
+      if (item.checked) {
+        if (onlyFreeShipping) {
+          onlyFreeShipping.forEach((card) => {
+            console.log(card.color.includes(item.id));
+            if (card.color.includes(item.id)) {
+              onlyColor.push(card);
+            }
+          });
+        } else {
+          this.allCards.forEach((card) => {
+            if (card.color.includes(item.id)) {
+              onlyColor.push(card);
+            }
+          });
+        }
+      }
+    });
+    onlyColor = onlyColor.length ? onlyColor : onlyFreeShipping;*/
+
+    const color: NodeListOf<HTMLInputElement> =
+      document.querySelectorAll('.product-color');
+    let onlyColor: Array<IDataCard> = [];
+    color.forEach((item) => {
+      if (item.checked) {
+        if (onlyFreeShipping) {
+          onlyFreeShipping.forEach((card) => {
+            console.log(card.color.includes(item.id));
+            if (card.color == item.id) {
+              onlyColor.push(card);
+            }
+          });
+        } else {
+          this.allCards.forEach((card) => {
+            if (card.color == item.id) {
+              onlyColor.push(card);
+            }
+          });
+        }
+      }
+    });
+    onlyColor = onlyColor.length ? onlyColor : onlyBestseller;
+
+    if (onlyColor.length) {
+      this.dataCards = onlyColor;
+    } else {
+      this.dataCards = this.allCards;
+    }
+
+    this.searchCards = this.dataCards.concat([]);
+    //const search: HTMLInputElement =  document.querySelector('#search').addEventListener( input, )
+    /* const search: NodeListOf<HTMLInputElement> =
+      document.querySelectorAll('#search');
+
+      search.forEach( (item) => {
+        item.addEventListener(input, console.log ('fdfdf'))
+      })
+   function () {
+        const val = this.value.trim();
+        const elasticItems = document.querySelectorAll('.el p');
+        if (val != '') {
+        // проверка если вводимое значение не равно пустой строке
+          elasticItems.forEach(function (elem) {
+            if (elem.innerText.search(val) == -1) {
+              elem.classList.add('.hide');
+            } else {
+              elem.classList.remove('.hide');
+            }
+          });
+        } else {
+          elasticItems.forEach(function (elem) {
+            elem.classList.remove('.hide');
+          });
+        }
+      };*/
   }
+
+
+
+  search(inputNode: HTMLInputElement):void {
+    console.log('search start');
+    const value: string = inputNode.value.toUpperCase();
+    console.log(value);
+    console.log('this.searchCards');
+    console.log(this.searchCards);
+    const forSearch: Array<IDataCard> | undefined = this.searchCards?.concat([]);
+    //this.dataCards.concat(this.dataCards,[]);
+    //console.log('forsearch');
+    //console.log(forSearch);
+
+
+    const onlySearchCard: Array<IDataCard> = [];
+    forSearch?.forEach((card) => {
+      console.log(card.name.search(value));
+      const nameToUpper = card.name.toUpperCase();
+      if (nameToUpper.search(value) !== -1) {
+        onlySearchCard.push(card);
+      }
+    });
+    if (onlySearchCard !== undefined){
+      this.dataCards = onlySearchCard;
+    } else {this.dataCards = []}
+      
+
+
+  }
+
+
 }

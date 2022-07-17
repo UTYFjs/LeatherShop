@@ -120,24 +120,47 @@ body{
 
 
   .sidebar{
-    width: 15vw; 
+    width: 18vw; 
     background-color: antiquewhite;
     display:flex;
     flex-direction: column;
     .search-field{
       background-color: #fff;
       height: 40px;
-      width: 15vw;
+      width: 18vw;
     }
     .filter-field{
       background-color: aqua;
-      height: 1000px;
-      width: 15vw;
+      width: 18vw;
+    }
+    .price{
+      #slider{
+        .noUi-handle{
+              height: 15px !important;
+    width: 15px !important;
+    right: -17px;
+    top: -6px;
+        .noUi-handle:before,
+.noUi-handle:after{
+          display: none !important;
+
+        }
+        }
+      }
+      .price-inputs{
+        display: flex;
+        justify-content: space-around;
+        input{
+          border: none;
+          border-radius: 3px;
+        }
+      }
     }
 
   }
   .container{
-    width: 70vw;
+    width: 67vw;
+    height: auto;
     background-color: azure;
     display: flex;
     flex-direction: column;
@@ -151,7 +174,7 @@ body{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
-      margin: 1rem;
+      margin: 0.4rem;
     .card{
       width: 22vw;
       height: 28vw;

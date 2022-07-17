@@ -150,6 +150,15 @@ export class Main {
     parent.append(option);
 
   }
+  createInput(type: string, id: string, placeholder: string, min: string, max: string  ):HTMLInputElement{
+    const input: HTMLInputElement = document.createElement('input');
+    input.setAttribute('type', type);
+    input.setAttribute('id', id);
+    input.setAttribute('placeholder', placeholder);
+    input.setAttribute('min', min);
+    input.setAttribute('max', max);
+    return input;
+  }
   getSort(): HTMLElement {
     const sortField: HTMLElement = this.div();
     sortField.classList.add('sort-field');
@@ -188,24 +197,41 @@ export class Main {
     slider.setAttribute('id', 'slider');
 
     noUiSlider.create(slider, {
-      start: [20, 80],
+      start: [20, 300],
       connect: true,
+      step: 1,
       range: {
-        min: 0,
-        max: 100,
+        min: [20],
+        max: [300],
       },
+      
       //pips: {
       //  mode: 'steps',
       //  stepped: true,
       //  density: 4
       //},
     });
+    //slider.noUiSlider.on('update', (values, handle) =>
+    //  console.log(values)
+    //);
 
     slider.style.height = '5px';
-    slider.style.width = '200px';
+    slider.style.width = '17vw';
     slider.style.margin = '0 auto 5px';
 
     return slider;
+  }
+  getRangeFilter(): HTMLElement{
+    const rangeFilter: HTMLElement = this.div('price');
+    rangeFilter.textContent = 'Стоимость';
+    rangeFilter.append(this.getRangeSlider());
+    const inputs: HTMLElement = this.div('price-inputs');
+    inputs.append(this.createInput('number', 'price-from', '20', '20', '300'));
+    inputs.append(this.createInput('number', 'price-to', '300', '20', '300'));
+    rangeFilter.append(inputs);
+
+
+    return rangeFilter;
   }
 
   getSidebar(): HTMLElement {
@@ -219,6 +245,7 @@ export class Main {
     const search: HTMLInputElement = document.createElement('input');
     search.setAttribute('type', 'text');
     search.setAttribute('id', 'search');
+    search.setAttribute('placeholder', 'Введите текст для поиска...');
     const label: HTMLLabelElement = document.createElement('label');
     label.textContent = 'Поиск';
     label.setAttribute('for', 'search');
@@ -304,7 +331,7 @@ export class Main {
 
     sidebar.append(searchField);
     sidebar.append(filterField);
-    sidebar.append(this.getRangeSlider());
+    sidebar.append(this.getRangeFilter())
 
     return sidebar;
   }

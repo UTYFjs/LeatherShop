@@ -21,7 +21,7 @@ export class App {
 
   listener() {
     const input: NodeListOf<HTMLInputElement> =
-      document.querySelectorAll('input');
+      document.querySelectorAll('.checkbox');
     input.forEach((item) => {
       item.addEventListener('click', () => { ///должна быть функция фильтр 
         console.log( 'listener work')
@@ -33,6 +33,12 @@ export class App {
     const search: HTMLElement | null = document.getElementById('search');
     search?.addEventListener('input', () => {
       this.model.search(search as HTMLInputElement);
+      this.view.main.getCatalog(this.model.dataCards);
+    })
+
+    const sort: HTMLElement | null = document.getElementById('select');
+    sort?.addEventListener('change', ():void => {
+      this.model.sort();
       this.view.main.getCatalog(this.model.dataCards);
     })
   }

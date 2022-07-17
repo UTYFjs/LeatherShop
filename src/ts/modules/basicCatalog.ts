@@ -8,16 +8,25 @@ export class BasicCatalog {
   productTypes: IProductTypes;
   filter: boolean;
   searchCards: Array<IDataCard> | null;
+  cart: number;
 
   constructor(data: Array<IDataCard>) {
     this.dataCards = data;
     this.searchCards = data;
     this.allCards = data;
-    this.productTypes = {belt: true, wallet: true, notebook: true, bag: true, cardholder: true, forDocuments: true,};
+    this.productTypes = {
+      belt: true,
+      wallet: true,
+      notebook: true,
+      bag: true,
+      cardholder: true,
+      forDocuments: true,
+    };
     this.filter = false;
+    this.cart = 0;
   }
 
-  newFilter():void{
+  newFilter(): void {
     console.log('filter start');
     const input: NodeListOf<HTMLInputElement> =
       document.querySelectorAll('.product-type');
@@ -139,15 +148,15 @@ export class BasicCatalog {
     this.searchCards = this.dataCards.concat([]);
   }
 
-
-
-  search(inputNode: HTMLInputElement):void {
+  search(inputNode: HTMLInputElement): void {
     console.log('search start');
     const value: string = inputNode.value.toUpperCase();
     console.log(value);
     console.log('this.searchCards');
     console.log(this.searchCards);
-    const forSearch: Array<IDataCard> | undefined = this.searchCards?.concat([]);
+    const forSearch: Array<IDataCard> | undefined = this.searchCards?.concat(
+      []
+    );
 
     const onlySearchCard: Array<IDataCard> = [];
     forSearch?.forEach((card) => {
@@ -157,29 +166,27 @@ export class BasicCatalog {
         onlySearchCard.push(card);
       }
     });
-    if (onlySearchCard !== undefined){
+    if (onlySearchCard !== undefined) {
       this.dataCards = onlySearchCard;
-    } else {this.dataCards = []}
+    } else {
+      this.dataCards = [];
+    }
   }
 
-  sort(){
+  sort() {
     console.log('sort.start');
     const options = document.querySelectorAll('option');
 
     options.forEach((optionItem) => {
-      
-      if(optionItem.selected){
-        
+      if (optionItem.selected) {
         if (optionItem.id) {
-
-          const forSort: Array<IDataCard> | undefined = this.searchCards?.concat([]);
+          const forSort: Array<IDataCard> | undefined =
+            this.searchCards?.concat([]);
           if (optionItem.id == 'priceLowest') {
             forSort?.sort((a, b) => +b.price - +a.price);
           }
           if (optionItem.id == 'priceHighest') {
-            forSort?.sort(
-              (a: IDataCard, b: IDataCard) => +a.price - +b.price
-            );
+            forSort?.sort((a: IDataCard, b: IDataCard) => +a.price - +b.price);
           }
           if (optionItem.id == 'aHigh') {
             forSort?.sort((a: IDataCard, b: IDataCard) => {
@@ -202,12 +209,40 @@ export class BasicCatalog {
           }
           //forSort?.sort((a, b) => +a.price - +b.price);
           console.log(optionItem.id);
-          if(forSort) {this.dataCards = forSort}
+          if (forSort) {
+            this.dataCards = forSort;
+          }
         }
       }
+    });
+  }
 
-
-    })
+  updateCartUp(idCard: string) {
+    const currentCard = data.find((item) => {
+      if (item.img === idCard) {
+        return item;
+      }
+    });
+    if (currentCard) {
+      if (currentCard.countInCart < currentCard.stock) {
+        currentCard.countInCart += 1;
+        this.cart += 1;
+      }
+    }
+   
+  }
+  updateCartDown(idCard: string) {
+    const currentCard = data.find((item) => {
+      if (item.img === idCard) {
+        return item;
+      }
+    });
+    if (currentCard) {
+      if (currentCard.countInCart > 0) {
+        currentCard.countInCart -= 1;
+        this.cart -= 1;
+      }
+    }
   }
 }
 

@@ -7,7 +7,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'red',
     price: '110',
-    stock: '2',
+    stock: 2,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '3',
@@ -15,6 +15,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Сумка "Child"',
@@ -22,7 +23,7 @@ export const data: Array<IDataCard> = [
     type: 'bag',
     color: 'orange',
     price: '90',
-    stock: '0',
+    stock: 0,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '7',
@@ -30,6 +31,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Сумка',
@@ -37,7 +39,7 @@ export const data: Array<IDataCard> = [
     type: 'bag',
     color: 'orange',
     price: '250',
-    stock: '2',
+    stock: 2,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '7',
@@ -45,6 +47,7 @@ export const data: Array<IDataCard> = [
     freeShipping: true,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Ремень "Бизон"',
@@ -52,7 +55,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'black',
     price: '125',
-    stock: '0',
+    stock: 0,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '99',
@@ -60,6 +63,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Ремень "Кровавая Мэри"',
@@ -67,7 +71,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'mix',
     price: '150',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '3',
@@ -75,6 +79,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Ремень "Fireman"',
@@ -82,7 +87,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'black',
     price: '170',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '5',
@@ -90,6 +95,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Деревянный блокнот',
@@ -97,7 +103,7 @@ export const data: Array<IDataCard> = [
     type: 'notebook',
     color: 'sand',
     price: '75',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '14',
@@ -105,6 +111,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Монетница',
@@ -112,7 +119,7 @@ export const data: Array<IDataCard> = [
     type: 'coinBox',
     color: 'red',
     price: '40',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '3',
@@ -120,6 +127,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Докхолдер "Бизон"',
@@ -127,7 +135,7 @@ export const data: Array<IDataCard> = [
     type: 'forDocuments',
     color: 'brown',
     price: '100',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '5',
@@ -135,6 +143,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Ремень "Gold"',
@@ -142,7 +151,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'gold',
     price: '150',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '14',
@@ -150,6 +159,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Ремень "Missouri"',
@@ -157,7 +167,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'black',
     price: '160',
-    stock: '0',
+    stock: 0,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '14',
@@ -165,6 +175,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Ремень "Missouri"',
@@ -172,7 +183,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'brown',
     price: '160',
-    stock: '2',
+    stock: 2,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '6',
@@ -180,6 +191,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Ремень "Missouri"',
@@ -187,7 +199,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'brown',
     price: '160',
-    stock: '2',
+    stock: 2,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '5',
@@ -195,6 +207,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Ремень "OnlyBlack"',
@@ -202,7 +215,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'black',
     price: '180',
-    stock: '2',
+    stock: 2,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '5',
@@ -210,6 +223,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Ремень "Гранат"',
@@ -217,7 +231,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'mix',
     price: '150',
-    stock: '2',
+    stock: 2,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '5',
@@ -225,6 +239,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Ремень "Винтаж"',
@@ -232,7 +247,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'orange',
     price: '110',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '12',
@@ -240,6 +255,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Кошелек',
@@ -247,7 +263,7 @@ export const data: Array<IDataCard> = [
     type: 'wallet',
     color: 'brown',
     price: '110',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '7',
@@ -255,6 +271,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Кошелек Crazy',
@@ -262,7 +279,7 @@ export const data: Array<IDataCard> = [
     type: 'wallet',
     color: 'brown',
     price: '100',
-    stock: '2',
+    stock: 2,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '4',
@@ -270,6 +287,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Мини-кошелек "Бизон"',
@@ -277,7 +295,7 @@ export const data: Array<IDataCard> = [
     type: 'wallet',
     color: 'brown',
     price: '70',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '5',
@@ -285,6 +303,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Ремень "Violet"',
@@ -292,7 +311,7 @@ export const data: Array<IDataCard> = [
     type: 'belt',
     color: 'mix',
     price: '150',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '3',
@@ -300,6 +319,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Картхолдер',
@@ -307,7 +327,7 @@ export const data: Array<IDataCard> = [
     type: 'cardholder',
     color: 'mix',
     price: '35',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '3',
@@ -315,6 +335,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Картхолдер',
@@ -322,7 +343,7 @@ export const data: Array<IDataCard> = [
     type: 'cardholder',
     color: 'brown',
     price: '35',
-    stock: '2',
+    stock: 2,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '3',
@@ -330,6 +351,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Картхолдер сет (4 шт)',
@@ -337,7 +359,7 @@ export const data: Array<IDataCard> = [
     type: 'cardholder',
     color: 'mix',
     price: '125',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '4',
@@ -345,6 +367,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Докхолдер',
@@ -352,7 +375,7 @@ export const data: Array<IDataCard> = [
     type: 'forDocuments',
     color: 'mix',
     price: '90',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '5',
@@ -360,6 +383,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Деревянный блокнот (4 шт)',
@@ -367,7 +391,7 @@ export const data: Array<IDataCard> = [
     type: 'notebook',
     color: 'sand',
     price: '280',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '14',
@@ -375,6 +399,7 @@ export const data: Array<IDataCard> = [
     freeShipping: true,
     manufacturer: 'alPaco',
     year: 2021,
+    countInCart: 0,
   },
   {
     name: 'Кошелек',
@@ -382,7 +407,7 @@ export const data: Array<IDataCard> = [
     type: 'wallet',
     color: 'orange',
     price: '110',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '5',
@@ -390,6 +415,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Обложка на паспорт',
@@ -397,7 +423,7 @@ export const data: Array<IDataCard> = [
     type: 'forDocuments',
     color: 'brown',
     price: '30',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '3',
@@ -405,6 +431,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Обложка на паспорт Деревянная',
@@ -412,7 +439,7 @@ export const data: Array<IDataCard> = [
     type: 'forDocuments',
     color: 'sand',
     price: '50',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '3',
@@ -420,6 +447,7 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
   {
     name: 'Кошелек с монетницей',
@@ -427,7 +455,7 @@ export const data: Array<IDataCard> = [
     type: 'wallet',
     color: 'brown',
     price: '110',
-    stock: '1',
+    stock: 1,
     description:
       'Red vintage belt. Natural leather, strong furniture. Leather thickness - 4-4.2 mm',
     productionTime: '5',
@@ -435,5 +463,6 @@ export const data: Array<IDataCard> = [
     freeShipping: false,
     manufacturer: 'alPaco',
     year: 2022,
+    countInCart: 0,
   },
 ];

@@ -21,8 +21,9 @@ export class AppView {
     this.main = new Main(this.data);
   }
 
-  async createPage(): Promise<void> {
+  async createPage(data:number): Promise<void> {
     await this.header.initHeader();
+    await this.header.createCart(data)
     await this.main.initMain(this.data);
     await this.main.getCatalog(this.data);
     await this.footer.initFooter();

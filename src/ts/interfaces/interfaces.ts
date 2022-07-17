@@ -4,12 +4,13 @@ export interface IDataCard {
   type: string;
   color: string;
   price: string;
-  stock: string;
+  stock: number;
   description: string;
   productionTime: string;
   bestseller: boolean;
   freeShipping: boolean;
-  available?: string; 
+  countInCart: number;
+  available?: string;
   manufacturer?: string;
   amount?: number;
   year?: number;

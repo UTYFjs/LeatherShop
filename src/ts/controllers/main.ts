@@ -43,6 +43,7 @@ export class Main {
     data.forEach((item): void => {
       const card: HTMLElement = this.div();
       card.classList.add('card');
+      card.setAttribute('data-id', item.img);
       const img: HTMLElement = document.createElement('img');
       img.classList.add('img');
       img.setAttribute('src', item.img);
@@ -64,12 +65,14 @@ export class Main {
       buyWrap.append(titleCart);
       const removeFromCart: HTMLElement = this.div('buy-wrap-remove');
       removeFromCart.textContent = '-';
+      removeFromCart.setAttribute('data-id', item.img);
       buyWrap.append(removeFromCart);
       const amountInCart: HTMLElement = this.div('buy-wrap-amount');
-      amountInCart.textContent = '0';  /// нужно равнять какой то цифре из карточки
+      amountInCart.textContent = `${item.countInCart}`;  /// нужно равнять какой то цифре из карточки
       buyWrap.append(amountInCart);
       const addToCart: HTMLElement = this.div('buy-wrap-add');
       addToCart.textContent = '+';
+      addToCart.setAttribute('data-id', item.img);
       buyWrap.append(addToCart);
       const maxInCart: HTMLElement = this.div('buy-wrap-max');
       maxInCart.textContent = `max: ${item.stock}`;

@@ -147,26 +147,25 @@ body{
       height: 40px;
     }
     .catalog{
-      border: 1px solid red;
       width: calc(70vw - 1rem);
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
-      gap: 2rem 2rem;
       margin: 1rem;
     .card{
-      width: 21vw;
-      height: 21vw;
-      border: 1px solid black;
+      width: 22vw;
+      height: 28vw;
+      padding: 0.7rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      border-radius: 10px;
       .description{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: stretch;
+        align-items: center;
         
 
         .card-title{
@@ -180,9 +179,44 @@ body{
           margin-block-end: 0;
         }
       }
+      .buy-wrap{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        gap: 0.5vw;
+        padding-bottom: 1vw;
+        .buy-wrap-title{
+          font-size: 0.9rem;
+        }
+
+        .buy-wrap-remove, .buy-wrap-add{
+          font-size: 1.2rem;
+          width: 2rem;
+          height: 2rem;
+          padding: auto 0;
+          text-align: center;
+          border-radius: 3px;
+          box-shadow: 1px 3px 3px 1px rgb(0 0 0 / 18%);
+        }
+        .buy-wrap-remove:active, .buy-wrap-add:active {
+          transform: scale(0.9);
+        }
+        .buy-wrap-remove:hover, .buy-wrap-add:hover {
+          cursor: pointer;
+          background-color: $gray;
+        }
+
+        .buy-wrap-max, .buy-wrap-amount{
+          font-size: 0.8rem;
+          color: $gray-text-1;
+        }
+      }
       img {
-        width: 18vw;
-        height: 18vw;
+        width: 20vw;
+        height: 20vw;
         
       }
     }

@@ -54,11 +54,31 @@ export class Main {
       cardTitle.textContent = item.name;
       const cardPrice: HTMLElement = document.createElement('p');
       cardPrice.classList.add('card-price');
-      cardPrice.textContent = item.price;
+      cardPrice.textContent = `Цена: ${item.price}`;
       description.append(cardTitle);
       description.append(cardPrice);
+      const buyWrap: HTMLElement = this.div();
+      buyWrap.classList.add('buy-wrap');
+      const titleCart: HTMLElement = this.div('buy-wrap-title');
+      titleCart.textContent = 'В корзину';
+      buyWrap.append(titleCart);
+      const removeFromCart: HTMLElement = this.div('buy-wrap-remove');
+      removeFromCart.textContent = '-';
+      buyWrap.append(removeFromCart);
+      const amountInCart: HTMLElement = this.div('buy-wrap-amount');
+      amountInCart.textContent = '0';  /// нужно равнять какой то цифре из карточки
+      buyWrap.append(amountInCart);
+      const addToCart: HTMLElement = this.div('buy-wrap-add');
+      addToCart.textContent = '+';
+      buyWrap.append(addToCart);
+      const maxInCart: HTMLElement = this.div('buy-wrap-max');
+      maxInCart.textContent = `max: ${item.stock}`;
+      buyWrap.append(maxInCart);
+
+
       card.append(img);
       card.append(description);
+      card.append(buyWrap);
       catalog.append(card);
     });
     
@@ -79,8 +99,11 @@ export class Main {
     return catalog;
   }
 
-  div(): HTMLElement {
+  div(classAdd?: string): HTMLElement {
     const div: HTMLElement = document.createElement('div');
+    if(classAdd){
+      div.classList.add(classAdd);
+    }    
     return div;
   }
   createCheckbox(

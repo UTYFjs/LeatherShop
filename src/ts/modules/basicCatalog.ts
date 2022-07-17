@@ -133,7 +133,7 @@ export class BasicCatalog {
     if (onlyColor.length) {
       this.dataCards = onlyColor;
     } else {
-      this.dataCards = this.allCards;
+      //this.dataCards = this.allCards;
     }
 
     this.searchCards = this.dataCards.concat([]);

@@ -17,7 +17,7 @@ export const data: Array<IDataCard> = [
     year: 2021,
   },
   {
-    name: 'Сумка тоут детская',
+    name: 'Сумка "Child"',
     img: './assets/img/bag-tote-child-orange-small.jpg',
     type: 'bag',
     color: 'orange',
@@ -47,7 +47,7 @@ export const data: Array<IDataCard> = [
     year: 2021,
   },
   {
-    name: 'Ремень "Бизон" черный',
+    name: 'Ремень "Бизон"',
     img: './assets/img/belt-bizon-black.jpg',
     type: 'belt',
     color: 'black',
@@ -77,7 +77,7 @@ export const data: Array<IDataCard> = [
     year: 2021,
   },
   {
-    name: 'Ремень "Fireman" черный',
+    name: 'Ремень "Fireman"',
     img: './assets/img/belt-fireman-black.jpg',
     type: 'belt',
     color: 'black',
@@ -152,7 +152,7 @@ export const data: Array<IDataCard> = [
     year: 2021,
   },
   {
-    name: 'Ремень "Missouri" черный',
+    name: 'Ремень "Missouri"',
     img: './assets/img/belt-missouri-black.jpg',
     type: 'belt',
     color: 'black',
@@ -167,7 +167,7 @@ export const data: Array<IDataCard> = [
     year: 2022,
   },
   {
-    name: 'Ремень "Missouri" бургунди',
+    name: 'Ремень "Missouri"',
     img: './assets/img/belt-missouri-burgundy.jpg',
     type: 'belt',
     color: 'brown',
@@ -197,7 +197,7 @@ export const data: Array<IDataCard> = [
     year: 2021,
   },
   {
-    name: 'Ремень "OnlyBlack" черный',
+    name: 'Ремень "OnlyBlack"',
     img: './assets/img/belt-only-black.jpg',
     type: 'belt',
     color: 'black',
@@ -362,7 +362,7 @@ export const data: Array<IDataCard> = [
     year: 2021,
   },
   {
-    name: 'Деревянный блокнот сет (4 шт)',
+    name: 'Деревянный блокнот (4 шт)',
     img: './assets/img/notebook-mix.jpg',
     type: 'notebook',
     color: 'sand',

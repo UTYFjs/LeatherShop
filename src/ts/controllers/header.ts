@@ -22,7 +22,7 @@ export class Header {
     menuList.classList.add('menu-list');
 
     const linksArr: string[] = ['Home', 'Catalog', 'About'];
-    const hrefArr: string[] = ['fsdfsd', 'sdfsdf', 'sdfsdfd'];
+    const hrefArr: string[] = ['#', '#wrapper-catalog', '#footer'];
     linksArr.forEach((item, index) => {
       const menuItem: HTMLElement = document.createElement('li');
       menuItem.classList.add('menu-list-item');
@@ -56,7 +56,7 @@ export class Header {
     cart.append(p);
     const img: HTMLElement = document.createElement('img');
     img.classList.add('cart-img');
-    img.setAttribute('src', './assets/img/belt_red_vintage.jpg');
+    img.setAttribute('src', './assets/img/cart.svg');
     img.setAttribute('alt', 'cart-img');
     cart.append(img);
 

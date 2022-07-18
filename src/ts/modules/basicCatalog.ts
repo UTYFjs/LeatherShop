@@ -30,22 +30,26 @@ export class BasicCatalog {
     const input: NodeListOf<HTMLInputElement> =
       document.querySelectorAll('.product-type');
     let onlyProductType: Array<IDataCard> = [];
+    let flagProduct = false;
     input.forEach((item) => {
       if (item.checked) {
+        flagProduct = true;
         this.allCards.forEach((card) => {
           if (card.type == item.id) {
             onlyProductType.push(card);
           }
         });
-      } else {}
+      }
     });
-    onlyProductType = onlyProductType.length ? onlyProductType : this.allCards;
+    onlyProductType = onlyProductType.length ? onlyProductType : flagProduct ? [] : this.allCards;
 
     const manufacturer: NodeListOf<HTMLInputElement> =
       document.querySelectorAll('.product-manufacturer');
     let onlyManufacturer: Array<IDataCard> = [];
+    let flagManufacturer = false;
     manufacturer.forEach((item) => {
       if (item.checked) {
+        flagManufacturer = true;
         if (onlyProductType) {
           onlyProductType.forEach((card) => {
             if (card.manufacturer == item.id) {
@@ -63,13 +67,15 @@ export class BasicCatalog {
     });
     onlyManufacturer = onlyManufacturer.length
       ? onlyManufacturer
-      : onlyProductType;
+      : flagManufacturer? [] : onlyProductType;
 
     const freeShipping: NodeListOf<HTMLInputElement> =
       document.querySelectorAll('#freeShipping');
     let onlyFreeShipping: Array<IDataCard> = [];
+    let flagFreeShipping = false;
     freeShipping.forEach((item) => {
       if (item.checked) {
+        flagFreeShipping = true;
         if (onlyManufacturer) {
           onlyManufacturer.forEach((card) => {
             if (card.freeShipping) {
@@ -89,13 +95,15 @@ export class BasicCatalog {
     });
     onlyFreeShipping = onlyFreeShipping.length
       ? onlyFreeShipping
-      : onlyManufacturer;
+      : flagFreeShipping? [] : onlyManufacturer;
 
     const bestseller: NodeListOf<HTMLInputElement> =
       document.querySelectorAll('#bestseller');
     let onlyBestseller: Array<IDataCard> = [];
+    let flagBestseller = false;
     bestseller.forEach((item) => {
       if (item.checked) {
+        flagBestseller = true;
         if (onlyFreeShipping) {
           onlyFreeShipping.forEach((card) => {
             if (card.bestseller) {
@@ -113,16 +121,17 @@ export class BasicCatalog {
         }
       }
     });
-    onlyBestseller = onlyBestseller.length ? onlyBestseller : onlyFreeShipping;
+    onlyBestseller = onlyBestseller.length ? onlyBestseller : flagBestseller? [] : onlyFreeShipping;
 
     const color: NodeListOf<HTMLInputElement> =
       document.querySelectorAll('.product-color');
     let onlyColor: Array<IDataCard> = [];
+    let flagColor  = false;
     color.forEach((item) => {
       if (item.checked) {
+        flagColor = true;
         if (onlyFreeShipping) {
           onlyFreeShipping.forEach((card) => {
-            console.log(card.color.includes(item.id));
             if (card.color == item.id) {
               onlyColor.push(card);
             }
@@ -136,12 +145,12 @@ export class BasicCatalog {
         }
       }
     });
-    onlyColor = onlyColor.length ? onlyColor : onlyBestseller;
+    onlyColor = onlyColor.length ? onlyColor : flagColor ? [] : onlyBestseller;
 
     if (onlyColor.length) {
       this.dataCards = onlyColor;
     } else {
-      //this.dataCards = this.allCards;
+      this.dataCards = [];
     }
 
     this.searchCards = this.dataCards.concat([]);

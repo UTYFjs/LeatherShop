@@ -10,8 +10,7 @@ export class Main {
     this.mainTemplate = document.createElement('main');
   }
 
-  initMain(data: Array<IDataCard>): void {
-    console.log('run init main');
+  initMain(): void {
     this.mainTemplate.classList.add('main');
     const container: HTMLElement = this.div();
     container.classList.add('container');
@@ -60,6 +59,7 @@ export class Main {
       description.append(cardPrice);
       const buyWrap: HTMLElement = this.div();
       buyWrap.classList.add('buy-wrap');
+      if(item.countInCart){buyWrap.classList.add('buy-wrap-pick');}
       const titleCart: HTMLElement = this.div('buy-wrap-title');
       titleCart.textContent = 'Купить';
       buyWrap.append(titleCart);
@@ -69,6 +69,9 @@ export class Main {
       buyWrap.append(removeFromCart);
       const amountInCart: HTMLElement = this.div('buy-wrap-amount');
       amountInCart.textContent = `${item.countInCart}`;  /// нужно равнять какой то цифре из карточки
+      if (item.countInCart) {
+        amountInCart.classList.add('buy-wrap-amount-active');
+      }
       buyWrap.append(amountInCart);
       const addToCart: HTMLElement = this.div('buy-wrap-add');
       addToCart.textContent = '+';
@@ -102,6 +105,8 @@ export class Main {
     return catalog;
   }
 
+
+  
   div(classAdd?: string): HTMLElement {
     const div: HTMLElement = document.createElement('div');
     if(classAdd){
@@ -236,7 +241,7 @@ export class Main {
     return rangeFilter;
   }
 
-  getSidebar(): HTMLElement {
+  protected getSidebar(): HTMLElement {
     const sidebar: HTMLElement = this.div();
     sidebar.classList.add('sidebar');
 
@@ -298,6 +303,7 @@ export class Main {
       manufacturer,
       'product-manufacturer'
     );
+
     const color: HTMLElement = this.div();
     color.classList.add('color');
     color.textContent = 'Цвет';
@@ -328,8 +334,7 @@ export class Main {
       bestseller,
       'product-bestseller'
     );
- 
-        
+         
     filterField.append(manufacturer);
     filterField.append(productCheckbox);
     filterField.append(shipping);
@@ -344,6 +349,5 @@ export class Main {
   }
   destroy(item: HTMLElement | null) {
     item?.remove();
-    console.log('start destroy');
   }
 }

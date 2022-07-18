@@ -230,7 +230,7 @@ color: $brown;
       display: block;
       width: 20px;
       height: 20px;
-      background-color: #fff;
+      //background-color: #fff;
       right: 15px;
       width: 0;
       height: 0;
@@ -302,6 +302,7 @@ color: $brown;
           margin-block-end: 0;
         }
       }
+      
       .buy-wrap{
         display:flex;
         flex-direction: row;
@@ -311,6 +312,7 @@ color: $brown;
         font-size: 0.9rem;
         gap: 0.5vw;
         padding-bottom: 1vw;
+        align-self: center;
         .buy-wrap-title{
           font-size: 0.9rem;
         }
@@ -332,10 +334,29 @@ color: $brown;
           background-color: $gray;
         }
 
-        .buy-wrap-max, .buy-wrap-amount{
+        .buy-wrap-max{
           font-size: 0.8rem;
           color: $gray-text-1;
         }
+         .buy-wrap-amount{
+          width: 24px;
+          height: 24px;
+          border-radius: 12;
+          text-align: center;
+          font-size: 0.8rem;
+          color: $gray-text-1;
+        }
+        .buy-wrap-amount-active{
+          display: block;
+        border-radius: 12px;
+        background-color: $yellow-cv;
+        font-size: 17px;
+        color: $dark-text-1;
+        }
+      }
+      .buy-wrap-pick{
+        border-radius: 7px;
+        //background-color: $yellow-cv;
       }
       img {
         width: 20vw;
@@ -495,6 +516,7 @@ align-items:  center;
     position: fixed;
     z-index: 2;
     height: 80px;
+    width: 100vw;
     gap: 1rem;
     justify-content: space-around;
 
@@ -685,10 +707,7 @@ color: $brown;
           background-color: $gray;
         }
 
-        .buy-wrap-max, .buy-wrap-amount{
-          font-size: 0.8rem;
-          color: $gray-text-1;
-        }
+
       }
 
       img {

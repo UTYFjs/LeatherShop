@@ -27,7 +27,6 @@ export class BasicCatalog {
   }
 
   newFilter(): void {
-    console.log('filter start');
     const input: NodeListOf<HTMLInputElement> =
       document.querySelectorAll('.product-type');
     let onlyProductType: Array<IDataCard> = [];
@@ -38,7 +37,7 @@ export class BasicCatalog {
             onlyProductType.push(card);
           }
         });
-      }
+      } else {}
     });
     onlyProductType = onlyProductType.length ? onlyProductType : this.allCards;
 
@@ -149,30 +148,23 @@ export class BasicCatalog {
   }
 
   search(inputNode: HTMLInputElement): void {
-    console.log('search start');
     const value: string = inputNode.value.toUpperCase();
-    console.log(value);
-    console.log('this.searchCards');
-    console.log(this.searchCards);
-    const forSearch: Array<IDataCard> | undefined = this.searchCards?.concat(
-      []
-    );
+    const forSearch: Array<IDataCard> | undefined = this.searchCards?.concat([]);
 
     const onlySearchCard: Array<IDataCard> = [];
     forSearch?.forEach((card) => {
-      console.log(card.name.search(value));
       const nameToUpper = card.name.toUpperCase();
       if (nameToUpper.search(value) !== -1) {
         onlySearchCard.push(card);
       }
     });
-    if (onlySearchCard !== undefined) {
+    if (onlySearchCard) {
       this.dataCards = onlySearchCard;
     } else {
       this.dataCards = [];
     }
   }
-
+  
   sort() {
     console.log('sort.start');
     const options = document.querySelectorAll('option');
@@ -218,21 +210,24 @@ export class BasicCatalog {
   }
 
   updateCartUp(idCard: string) {
-    const currentCard = data.find((item) => {
+    const currentCard = this.dataCards.find((item) => {
       if (item.img === idCard) {
         return item;
       }
     });
     if (currentCard) {
       if (currentCard.countInCart < currentCard.stock) {
-        currentCard.countInCart += 1;
-        this.cart += 1;
+        if(this.cart !== 20){
+          currentCard.countInCart += 1;
+          this.cart += 1;
+        }else { alert('извините все слоты заполнены')}
+
       }
     }
    
   }
   updateCartDown(idCard: string) {
-    const currentCard = data.find((item) => {
+    const currentCard = this.dataCards.find((item) => {
       if (item.img === idCard) {
         return item;
       }

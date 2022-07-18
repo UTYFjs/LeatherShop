@@ -11,11 +11,12 @@ export class App {
   constructor() {
     this.model = new BasicCatalog(data);
     this.view = new AppView(this.model.dataCards);
-        
   }
   async start(): Promise<void> {
     await this.view.createPage(this.model.cart);
     await this.listener();
+    this.listenerCatalog();
+
   }
 
   listener() {
@@ -23,9 +24,9 @@ export class App {
       document.querySelectorAll('.checkbox');
     input.forEach((item) => {
       item.addEventListener('click', () => { ///должна быть функция фильтр 
-        console.log( 'listener work')
         this.model.newFilter();
         this.view.main.getCatalog(this.model.dataCards);
+        this.listenerCatalog();
       });
     });
 
@@ -33,7 +34,9 @@ export class App {
     search?.addEventListener('input', () => {
       this.model.search(search as HTMLInputElement);
       this.view.main.getCatalog(this.model.dataCards);
-      this.listener();
+      this.listenerCatalog();
+      
+      //this.listener();
     })
 
     /*const searchReset: HTMLElement | null = document.getElementById('search-close-button')
@@ -49,8 +52,12 @@ export class App {
     sort?.addEventListener('change', ():void => {
       this.model.sort();
       this.view.main.getCatalog(this.model.dataCards);
+      this.listenerCatalog();
     })
+ 
 
+  }
+  listenerCatalog(){
     const updateCartUp: NodeListOf<HTMLInputElement> =
       document.querySelectorAll('.buy-wrap-add');
     updateCartUp.forEach((item) => {
@@ -61,23 +68,19 @@ export class App {
         if (item.dataset.id) this.model.updateCartUp(item.dataset.id);
         this.view.header.createCart(this.model.cart);
         this.view.main.getCatalog(this.model.dataCards);
-        this.listener();
+        this.listenerCatalog();
       });
     });
 
     const updateCartDown: NodeListOf<HTMLInputElement> =
-          document.querySelectorAll('.buy-wrap-remove');
+      document.querySelectorAll('.buy-wrap-remove');
     updateCartDown.forEach((item) => {
       item.addEventListener('click', () => {
-        ///должна быть функция фильтр
-        console.log('кнопка работает');
-        console.log(item.dataset.id);
         if (item.dataset.id) this.model.updateCartDown(item.dataset.id);
         this.view.header.createCart(this.model.cart);
         this.view.main.getCatalog(this.model.dataCards);
-        this.listener();
+        this.listenerCatalog();
       });
     });
-
   }
 }

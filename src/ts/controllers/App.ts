@@ -33,8 +33,18 @@ export class App {
     search?.addEventListener('input', () => {
       this.model.search(search as HTMLInputElement);
       this.view.main.getCatalog(this.model.dataCards);
+      this.listener();
     })
 
+    /*const searchReset: HTMLElement | null = document.getElementById('search-close-button')
+    searchReset?.addEventListener('click', ():void => {
+      const search : HTMLElement | null = document.getElementById('search');
+      if (search) { (search as HTMLInputElement).value = ''}
+      //(search as HTMLInputElement)?.value = ''
+      this.model.search(search as HTMLInputElement);
+      this.view.main.getCatalog(this.model.dataCards);
+      this.listener();
+    })*/
     const sort: HTMLElement | null = document.getElementById('select');
     sort?.addEventListener('change', ():void => {
       this.model.sort();

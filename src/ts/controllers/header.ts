@@ -1,10 +1,10 @@
 
 export class Header {
   headerTemplate: HTMLElement;
-  cart: HTMLElement;
+
   constructor() {
     this.headerTemplate = document.createElement('header');
-    this.cart = document.createElement('section');
+
   }
 
   initHeader(): void {
@@ -59,7 +59,6 @@ export class Header {
 
     this.headerTemplate.append(logo);
     this.headerTemplate.append(nav);
-    this.headerTemplate.append(this.cart);
     this.headerTemplate.classList.add('header');
     this.headerTemplate.setAttribute('id','header');
     console.log(this.headerTemplate);
@@ -73,10 +72,10 @@ export class Header {
     const cart: HTMLElement = document.createElement('section');
     cart.classList.add('cart');
     cart.setAttribute('id','cart');
-    const h4: HTMLElement = document.createElement('h4');
+    /*const h4: HTMLElement = document.createElement('h4');
     h4.classList.add('cart-title');
-    h4.textContent = 'Cart';
-    cart.append(h4);
+    h4.textContent = '';
+    cart.append(h4);*/
 
     const p: HTMLElement = document.createElement('p');
     p.classList.add('cart-indicate');

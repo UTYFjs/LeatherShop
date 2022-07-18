@@ -434,7 +434,7 @@ export const data: Array<IDataCard> = [
     countInCart: 0,
   },
   {
-    name: 'Обложка на паспорт Деревянная',
+    name: 'Обложка на паспорт',
     img: './assets/img/passport-cover-wood.jpg',
     type: 'forDocuments',
     color: 'sand',

@@ -61,7 +61,7 @@ export class Main {
       const buyWrap: HTMLElement = this.div();
       buyWrap.classList.add('buy-wrap');
       const titleCart: HTMLElement = this.div('buy-wrap-title');
-      titleCart.textContent = 'В корзину';
+      titleCart.textContent = 'Купить';
       buyWrap.append(titleCart);
       const removeFromCart: HTMLElement = this.div('buy-wrap-remove');
       removeFromCart.textContent = '-';
@@ -162,7 +162,9 @@ export class Main {
   getSort(): HTMLElement {
     const sortField: HTMLElement = this.div();
     sortField.classList.add('sort-field');
-    sortField.textContent = "Сортировка";
+    const sortTitle: HTMLElement = this.div();
+    sortTitle.textContent = 'Сортировка';
+    sortTitle.classList.add('sort-title');
 
     const select: HTMLSelectElement = document.createElement('select');
     select.setAttribute('name', 'sort');
@@ -187,7 +189,7 @@ export class Main {
     );
     this.createOption('aHigh', 'По алфавиту(А-Я)', select, 'aHigh', 'option');
     this.createOption('zHigh', 'По алфавиту(Я-А)', select, 'zHigh', 'option');
-
+    sortField.append(sortTitle);
     sortField.append(select);
     return sortField;
   }
@@ -245,12 +247,17 @@ export class Main {
     const search: HTMLInputElement = document.createElement('input');
     search.setAttribute('type', 'text');
     search.setAttribute('id', 'search');
-    search.setAttribute('placeholder', 'Введите текст для поиска...');
+    search.setAttribute('placeholder', 'Я ищу...');
+    search.focus();
     const label: HTMLLabelElement = document.createElement('label');
-    label.textContent = 'Поиск';
+    //label.textContent = 'Поиск';
     label.setAttribute('for', 'search');
+    const closeButton:HTMLElement =document.createElement('span');
+    closeButton.setAttribute('id','search-close-button');
+    closeButton.textContent = 'X';
     searchField.append(label);
     searchField.append(search);
+    searchField.append(closeButton);
 
     const filterField: HTMLElement = this.div();
     filterField.classList.add('filter-field');
